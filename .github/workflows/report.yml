@@ -1,5 +1,5 @@
 # https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions
-name: Auto Self Report
+name: Auto Daily Report
 on: 
   push:
     branches:
