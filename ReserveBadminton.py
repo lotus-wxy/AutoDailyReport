@@ -27,7 +27,7 @@ def login(username, password, browser):
 def get_browser():
     chrome_options = Options()
     # headless本地报错
-    #chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-extensions')
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--no-sandbox')
