@@ -258,7 +258,6 @@ if __name__ == '__main__':
 
     url_login = 'https://uis.fudan.edu.cn/authserver/login?' \
                   'service=https://zlapp.fudan.edu.cn/site/ncov/fudanDaily'
-
     daily_fudan = AutoReport(user_info, url_login)
     logger.info("PingAnFuDan for user: %s \n",user_info[0])
     daily_fudan.login()

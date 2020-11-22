@@ -11,7 +11,7 @@
 
 ## 📑程序说明
 
-在每天北京时间8:05自动提交平安复旦，其中地理位置延续上次提交的位置。提交结果以邮件形式返回到个人邮箱中。
+在每天北京时间8:05（实际是8:49）自动提交平安复旦，其中地理位置延续上次提交的位置。提交结果以邮件形式返回到个人邮箱中。
 
 
 
@@ -33,5 +33,5 @@ fork完之后在自己repo中setting的secrets添加如下字段：
 
 （.yml文件使用方法详见[官方文档](https://docs.github.com/en/free-pro-team@latest/actions/creating-actions/about-actions#versioning-your-action)
 
-由于时差因素，不建议将时间改为北京时间8点以前。
+由于时差因素，不建议将时间改为北京时间8点以前（有意向的自己改完push过来谢谢）。
 
