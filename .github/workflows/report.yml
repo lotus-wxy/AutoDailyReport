@@ -39,5 +39,5 @@ jobs:
             EMAIL: ${{ secrets.EMAIL }}
           run: |
             
-            python ./formal.py
+            python ./ReserveBadminton.py
             python ./Fudandaily.py
