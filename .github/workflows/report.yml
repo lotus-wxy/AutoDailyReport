@@ -35,7 +35,5 @@ jobs:
             USERNAME: ${{ secrets.USERNAME }}
             PASSWORD: ${{ secrets.PASSWORD }}
             EMAIL: ${{ secrets.EMAIL }}
-          run: |
-            
-           # python ./ReserveBadminton.py
+          run: |            
             python ./Fudandaily.py
