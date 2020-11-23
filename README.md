@@ -33,5 +33,5 @@ fork完之后在自己repo中setting的secrets添加如下字段：
 
 （.yml文件使用方法详见[官方文档](https://docs.github.com/en/free-pro-team@latest/actions/creating-actions/about-actions#versioning-your-action)
 
-由于时差因素，不建议将时间改为北京时间8点以前（有意向的自己改完push过来谢谢）。
+由于时差因素，不建议将时间改为北京时间8点以前。
 
