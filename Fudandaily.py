@@ -154,9 +154,9 @@ class FduLogin:
                                 )
 
         to = [self.email]
-        with open("./res.txt", 'r') as f:
-            tmp = f.read()
-        mail_cont = [self.mail_content + tmp]
+   ##     with open("./res.txt", 'r') as f:
+    #        tmp = f.read()
+        mail_cont = [self.mail_content]
 
         logger.info("Sending mail to usr %s",self.username)
 
