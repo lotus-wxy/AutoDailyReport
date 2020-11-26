@@ -1,9 +1,9 @@
 # https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions
-name: Auto Daily Report
+name: Auto Reserve Badminton
 on: 
   push:
   schedule:
-  - cron: "5 0 * * *"
+  - cron: "30 22 * * *"
 jobs:
   bot:
     runs-on: ubuntu-latest
@@ -30,10 +30,10 @@ jobs:
               && sudo chmod +x /usr/local/bin/chromedriver \
               && chromedriver --version
           
-        - name: Auto Daily Report
+        - name: Auto Badminton
           env:
             USERNAME: ${{ secrets.USERNAME }}
             PASSWORD: ${{ secrets.PASSWORD }}
             EMAIL: ${{ secrets.EMAIL }}
           run: |            
-            python ./Fudandaily.py
+            python ./ReserveBadminton.py -d 026

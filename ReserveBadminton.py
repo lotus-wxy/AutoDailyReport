@@ -89,7 +89,17 @@ def writefile(res, path):
     with open(path, 'a') as f:
         f.write(res + '\n')
 
-
+def send_mail(path, email):
+    mail = yagmail.SMTP(
+        user='fdureporter@163.com',
+        password='WRSREHPSHPMOXCWM',
+        host='smtp.163.com'
+        )
+    to = email
+    with open(path, 'r') as f:
+        content = f.read()
+    mail.send(to = to, subject = '羽毛球预约', content = content)
+    
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--day", default = "02")#默认周一周三
@@ -112,7 +122,7 @@ if __name__ == "__main__":
     """
     #date = "11-24"
     #hour = "16:00"
-    
+    flag = 0
     for ch in day:
         target_day = int(ch)
         x = (target_day - current_day + 7)%7
@@ -121,3 +131,6 @@ if __name__ == "__main__":
             print(date, hour)
             res = reserve(browser, date, hour)
             writefile(res, path)
+            flag = 1
+    if flag:
+        send_mail(path, os.environ['email'])
