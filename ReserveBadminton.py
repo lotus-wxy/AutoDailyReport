@@ -13,8 +13,8 @@ def login(username, password, browser):
     #先登录
     browser.get(url)
 
-    browser.find_element_by_name("username").send_keys("20210240183")
-    browser.find_element_by_name("password").send_keys("Fdu990202")
+    browser.find_element_by_name("username").send_keys(username)
+    browser.find_element_by_name("password").send_keys(password)
 
     browser.find_element_by_id("idcheckloginbtn").click()
 
@@ -48,7 +48,7 @@ def get_account():
             print("FAK")
     # 在github上整，系统是linux的话不要怪我
     else:
-        username = os.environ['PASSWORD']
+        username = os.environ['USERNAME']
         password = os.environ['PASSWORD']
     return username, password
 
@@ -133,4 +133,4 @@ if __name__ == "__main__":
             writefile(res, path)
             flag = 1
     if flag:
-        send_mail(path, os.environ['email'])
+        send_mail(path, os.environ['EMAIL'])
