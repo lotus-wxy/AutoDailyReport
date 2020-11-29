@@ -98,7 +98,7 @@ def send_mail(path, email):
     to = email
     with open(path, 'r') as f:
         content = f.read()
-    mail.send(to = to, subject = '羽毛球预约', content = content)
+    mail.send(to = to, subject = '羽毛球预约', contents = content)
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
