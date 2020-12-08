@@ -1,8 +1,9 @@
 # https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions
 name: Auto Reserve Badminton
 on: 
+  push:
   schedule:
-  - cron: "5 * * * *"
+  - cron: "10 * * * *"
 jobs:
   bot:
     runs-on: ubuntu-latest
