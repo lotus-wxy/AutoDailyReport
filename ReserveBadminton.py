@@ -132,6 +132,7 @@ if __name__ == "__main__":
             date = (datetime.datetime.now() + datetime.timedelta(days = x)).strftime("%m-%d")
             print(date, hour)
             res, flag = reserve(browser, date, hour)
+            print(res)
             writefile(res, path)
             FLAG = FLAG + flag
     if FLAG:
