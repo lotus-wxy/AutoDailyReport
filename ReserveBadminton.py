@@ -74,10 +74,10 @@ def reserve(browser, date, hour):
         ava = browser.find_element_by_xpath(xpth).get_attribute("src")
     except :
         file += "错误，请检查时间格式"
-        return file
+        return file, flag
     if(ava == 'https://elife.fudan.edu.cn/images/front/index/button/no.gif'):
         file += "指定时间已无空闲场次或您已预约"
-        return file
+        return file, flag
 
     browser.find_element_by_xpath(xpth).click()
 
