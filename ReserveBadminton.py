@@ -68,7 +68,7 @@ def reserve(browser, date, hour):
     #约个1600-1700的场
     #还得看看这玩意能约不
     xpth = "//*[font='" + hour + "']/../td[6]/img"
-
+    flag = 0
     file = "[" + date + ',' + hour + "]"
     try: 
         ava = browser.find_element_by_xpath(xpth).get_attribute("src")
@@ -83,7 +83,8 @@ def reserve(browser, date, hour):
 
     browser.find_element_by_xpath("//*[@id='btn_sub']").click()
     file += "预约成功"
-    return file
+    flag = 1
+    return file, flag
 
 def writefile(res, path):
     with open(path, 'a') as f:
@@ -123,14 +124,15 @@ if __name__ == "__main__":
     #date = "11-24"
     #hour = "16:00"
     flag = 0
+    FLAG = 0 #FLAG = 1: 预约成功
     for ch in day:
         target_day = int(ch)
         x = (target_day - current_day + 7)%7
         if(x <= 2):
             date = (datetime.datetime.now() + datetime.timedelta(days = x)).strftime("%m-%d")
             print(date, hour)
-            res = reserve(browser, date, hour)
+            res, flag = reserve(browser, date, hour)
             writefile(res, path)
-            flag = 1
-    if flag:
+            FLAG = FLAG + flag
+    if FLAG:
         send_mail(path, os.environ['EMAIL'])
