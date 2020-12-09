@@ -3,7 +3,7 @@ name: Auto Reserve Badminton
 on: 
   push:
   schedule:
-  - cron: "10 * * * *"
+  - cron: "15 22 * * *"
 jobs:
   bot:
     runs-on: ubuntu-latest

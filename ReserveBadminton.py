@@ -100,8 +100,29 @@ def send_mail(path, email):
     with open(path, 'r') as f:
         content = f.read()
     mail.send(to = to, subject = '羽毛球预约', contents = content)
-    
-if __name__ == "__main__":
+
+def get_time():
+    # 获取0时区时间，变换为东八区时间
+    # 原因：运行程序的服务器所处时区不确定
+    t = datetime.datetime.utcnow()
+    t = t + datetime.timedelta(hours=8)
+    return t
+
+def get_start_time(now_time):
+    start_time = now_time.replace(hour = 8, minute = 5, second = 10)  
+    return start_time
+
+def to_time():
+    now_time = get_time()
+    start_time = get_start_time(now_time)
+    t = (start_time - now_time).total_seconds()
+    print(str(t) + 's')
+    if(t < 0):
+        return 0
+    else:
+        return t
+
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--day", default = "02")#默认周一周三
     parser.add_argument("--hour", default = "16:00")#默认1600-1700
@@ -137,3 +158,8 @@ if __name__ == "__main__":
             FLAG = FLAG + flag
     if FLAG:
         send_mail(path, os.environ['EMAIL'])
+
+if __name__ == "__main__":
+    time.sleep(max(to_time(),6000)) #不是不闹，时候未到
+    main()
+
