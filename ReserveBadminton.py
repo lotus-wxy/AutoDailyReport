@@ -115,7 +115,7 @@ def get_start_time(now_time):
 
 def to_time():
     now_time = get_time()
-    print('现在时间是：北京时间'now_time)
+    print('现在时间是：北京时间' + now_time)
     start_time = get_start_time(now_time)
     t = (start_time - now_time).total_seconds()
     print(str(t) + 's')
