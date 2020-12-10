@@ -154,7 +154,7 @@ def main():
         x = (target_day - current_day + 7)%7
         if(x <= 2):
             date = (datetime.datetime.now() + datetime.timedelta(days = x)).strftime("%m-%d")
-            print(date, hour)
+            print('尝试预约' , date, hour)
             res, flag = reserve(browser, date, hour)
             print(res)
             writefile(res, path)
