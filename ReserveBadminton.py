@@ -109,11 +109,13 @@ def get_time():
     return t
 
 def get_start_time(now_time):
+    # 定在8点5分10秒搞事
     start_time = now_time.replace(hour = 8, minute = 5, second = 10)  
     return start_time
 
 def to_time():
     now_time = get_time()
+    print('现在时间是：北京时间'now_time)
     start_time = get_start_time(now_time)
     t = (start_time - now_time).total_seconds()
     print(str(t) + 's')
@@ -160,6 +162,5 @@ def main():
         send_mail(path, os.environ['EMAIL'])
 
 if __name__ == "__main__":
-    time.sleep(max(to_time(),6000)) #不是不闹，时候未到
+    time.sleep(max(to_time(), 0)) #不是不闹，时候未到
     main()
-
