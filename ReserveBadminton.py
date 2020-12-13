@@ -30,7 +30,7 @@ def get_browser():
     chrome_options.add_argument('--disable-extensions')
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--no-sandbox')
-    if os.path.exists("./chrome/chromedriver.exe"):
+    if os.name == 'nt':
         browser = webdriver.Chrome("C:\Github\科技强国\chrome\chromedriver.exe", chrome_options=chrome_options)
     else:
         browser = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=chrome_options)
