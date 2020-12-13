@@ -15,9 +15,8 @@ def login(username, password, browser):
 
     browser.find_element_by_name("username").send_keys(username)
     browser.find_element_by_name("password").send_keys(password)
-
-    browser.find_element_by_id("idcheckloginbtn").click()
-
+    sleep(17)
+   # browser.find_element_by_("//*[@id='idcheckloginbtn']").click()
     url = "https://elife.fudan.edu.cn/public/front/search.htm?id=2c9c486e4f821a19014f82381feb0001"
 
     browser.get(url)
@@ -57,7 +56,7 @@ def reserve(browser, date, hour):
 
     browser.get(url)
 
-    browser.find_element_by_xpath("/html/body/div/div/div[3]/table[1]/tbody/tr/td[2]/table/tbody/tr[5]/td/a").click()
+    browser.find_element_by_xpath("/html/body/div/div/div[3]/table[2]/tbody/tr/td[2]/table/tbody/tr[5]/td/a").click()
 
     # 到羽毛球预约界面了。
     # 快进到正确日期

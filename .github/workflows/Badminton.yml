@@ -36,4 +36,4 @@ jobs:
             PASSWORD: ${{ secrets.PASSWORD }}
             EMAIL: ${{ secrets.EMAIL }}
           run: |            
-            python ./ReserveBadminton.py -d 023
+            python ./ReserveBadminton.py -d 012 --hour 15:00
