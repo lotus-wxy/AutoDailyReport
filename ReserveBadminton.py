@@ -16,7 +16,7 @@ def login(username, password, browser):
     browser.find_element_by_name("username").send_keys(username)
     browser.find_element_by_name("password").send_keys(password)
     sleep(17)
-    browser.find_element_by_("//*[@id='idcheckloginbtn']").click()
+    browser.find_element_by_xpath("//*[@id='idcheckloginbtn']").click()
     url = "https://elife.fudan.edu.cn/public/front/search.htm?id=2c9c486e4f821a19014f82381feb0001"
 
     browser.get(url)
