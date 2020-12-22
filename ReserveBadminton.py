@@ -109,7 +109,7 @@ def get_time():
 
 def get_start_time(now_time):
     # 定在8点5分10秒搞事
-    start_time = now_time.replace(hour = 8, minute = 5, second = 10)  
+    start_time = now_time.replace(hour = 7, minute = 5, second = 10)  
     return start_time
 
 def to_time():
