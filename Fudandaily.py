@@ -190,13 +190,13 @@ class AutoReport(FduLogin):
         self.mail_content += "正在提交..." + '\n'
 
         province = self.last_info_position.get("province", "")
-        print(province)
+     #   print(province)上海市
         city = self.last_info_position.get("city", "")
-        print(city)
+      #  print(city)
         if not city: city = province
 
         district = self.last_info_position.get("district", "")
-        print(district)
+     #   print(district)杨浦区
         self.last_info.update(
                 {
                     "tw"      : "13",
@@ -228,7 +228,7 @@ class AutoReport(FduLogin):
 
         today = time.strftime("%Y%m%d", time.localtime())
 
-        if False:   #self.last_info["date"] == today
+        if self.last_info["date"] == today:
             info_str = "今日已提交"
             self.mail_title += '[已提交]'
             self.mail_content += info_str + '\n'
