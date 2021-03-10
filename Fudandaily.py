@@ -226,7 +226,7 @@ class AutoReport(FduLogin):
 
         today = time.strftime("%Y%m%d", time.localtime())
 
-        if self.last_info["date"] == today && False:   #3333
+        if self.last_info["date"] == today & False:   #3333
             info_str = "今日已提交"
             self.mail_title += '[已提交]'
             self.mail_content += info_str + '\n'
