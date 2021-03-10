@@ -201,6 +201,7 @@ class AutoReport(FduLogin):
                     "tw"      : "13",
                     "province": province,
                     "city"    : city,
+                    "district": district,
                     "area"    : " ".join((province, city, district))
                 }
         )
