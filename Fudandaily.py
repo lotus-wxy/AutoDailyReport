@@ -193,6 +193,7 @@ class AutoReport(FduLogin):
         print(province)
         city = self.last_info_position.get("city", "")
         print(city)
+        if not city: city = province
 
         district = self.last_info_position.get("district", "")
         print(district)
