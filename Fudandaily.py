@@ -190,13 +190,19 @@ class AutoReport(FduLogin):
         self.mail_content += "正在提交..." + '\n'
 
         province = self.last_info_position.get("province", "")
+     #   print(province)上海市
         city = self.last_info_position.get("city", "")
+      #  print(city)
+        if not city: city = province
+
         district = self.last_info_position.get("district", "")
+     #   print(district)杨浦区
         self.last_info.update(
                 {
                     "tw"      : "13",
                     "province": province,
                     "city"    : city,
+                    "district": district,
                     "area"    : " ".join((province, city, district))
                 }
         )
